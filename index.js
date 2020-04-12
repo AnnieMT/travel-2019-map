@@ -1,13 +1,5 @@
-/**
- * This is a demo for MapChart.
- * 
- * Refer to the following link(s) for reference:
- * @see {@link https://www.amcharts.com/docs/v4/chart-types/map/}
- */
-
-// Themes begin
+// Theme
 am4core.useTheme(am4themes_animated);
-// Themes end
 
 // Create map instance
 var chart = am4core.create("chartdiv", am4maps.MapChart);
@@ -50,7 +42,7 @@ try {
   continentsSeries.geodata = am4geodata_continentsLow;
 }
 catch (e) {
-  continentsSeries.raiseCriticalError(new Error("Map geodata could not be loaded. Please download the latest amcharts geodata and extract its contents into the same directory as your amCharts files."));
+  continentsSeries.raiseCriticalError(new Error("Map geodata could not be loaded. Dammit!"));
 }
 
 continentsSeries.useGeodata = true;
@@ -73,27 +65,40 @@ var contintentHover = continentTemplate.states.create("hover");
 contintentHover.properties.fill = hoverColor;
 contintentHover.properties.stroke = hoverColor;
 
-continentsSeries.data = [{
+continentsSeries.data = [
+/*  
+{
   "id": "africa",
   "color": chart.colors.getIndex(0)
-}, {
+}, 
+{
   "id": "asia",
   "color": chart.colors.getIndex(1),
   "zoomGeoPoint": { latitude: 50, longitude: 86 },  // as Asia spans to negative longitudes, we need to specify custom zoomLevel and zoomGeoPoint
   "zoomLevel": 2
-}, {
+}, 
+*/
+{
   "id": "oceania",
   "color": chart.colors.getIndex(2)
-}, {
+}, 
+/*
+{
   "id": "europe",
   "color": chart.colors.getIndex(3)
-}, {
+}, 
+*/
+{
   "id": "northAmerica",
   "color": chart.colors.getIndex(4)
-}, {
+}, 
+/*
+{
   "id": "southAmerica",
   "color": chart.colors.getIndex(5)
-}];
+}
+*/
+];
 
 
 // Countries
