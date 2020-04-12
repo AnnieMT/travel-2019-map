@@ -39,7 +39,7 @@ var continentsSeries = chart.series.push(new am4maps.MapPolygonSeries());
 
 
 try {
-  continentsSeries.geodata = am4geodata_continentsLow;
+  continentsSeries.geodata = am4geodata_continentsHigh;
 }
 catch (e) {
   continentsSeries.raiseCriticalError(new Error("Map geodata could not be loaded. Dammit!"));
@@ -108,7 +108,7 @@ countriesSeries.visible = false; // start off as hidden
 countriesSeries.exclude = ["AQ"];
 
 try {
-  countriesSeries.geodata = am4geodata_worldLow;
+  countriesSeries.geodata = am4geodata_worldHigh;
 }
 catch (e) {
   countriesSeries.raiseCriticalError(new Error("Map geodata could not be loaded. Please download the latest amcharts geodata and extract its contents into the same directory as your amCharts files."));
@@ -136,6 +136,7 @@ countryHover.properties.fillOpacity = 0.8; // Reduce conflict with back to conti
 countryHover.properties.stroke = hoverColor;
 countryHover.properties.strokeOpacity = 1;
 
+//Labels
 var labelContainer = chart.chartContainer.createChild(am4core.Container);
 labelContainer.hide();
 labelContainer.config = {
